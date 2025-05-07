@@ -44,7 +44,7 @@ public partial class DownloadMultipleSetupViewModel(
 
     public IReadOnlyList<VideoQualityPreference> AvailableVideoQualityPreferences { get; } =
         // Without .AsEnumerable(), the below line throws a compile-time error starting with .NET SDK v9.0.200
-        Enum.GetValues<VideoQualityPreference>().AsEnumerable().Reverse<VideoQualityPreference>.ToArray() AS IReadOnlyList<VideoQualityPreference>;
+        Enum.GetValues<VideoQualityPreference>().AsEnumerable().Reverse().ToArray();
 
     [RelayCommand]
     private void Initialize()
